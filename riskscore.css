@@ -1,0 +1,89 @@
+h1 {
+    text-align: center;
+}
+
+button {
+    background-color: #a78a62;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b39a78;
+}
+
+.page {
+    text-align: center;
+}
+
+#totalCholesterol {
+    width: 30%;
+}
+
+#HDLCholesterol {
+    width: 30%;
+}
+
+span {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+
+label {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+
+#age {
+    width: 20%;
+}
+
+#error {
+    color: red;
+}
+
+#genderError {
+    color: red;
+}
+
+#smokingError {
+    color: red;
+}
+
+h1 {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+
+body { 
+    background-color: #fbfaf8;
+}
+
+h2 {
+    font-family: 'Corben', Georgia, Times, serif;
+    color: #c0ab8e;
+}
+
+.header {
+    background-color: #d8ccba;
+    padding: 15px;
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    max-width: 400px;
+    background-color: #d8ccba;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttonGap {
+    margin: 10px;
+}

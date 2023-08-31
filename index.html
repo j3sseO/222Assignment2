@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="riskscore.css">
+        <title>Framingham Risk Score Calculator</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Framingham Risk Score Calculator</h1>
+        </div>
+
+        <div class="page" id="page1">
+            <!-- Page 1: Age/Gender input -->
+            <h2>Please enter your age</h2>
+            <label for="age">Age:</label>
+            <input type="range" id="age" min="20" max="79" value="40" class="slider">
+            <span id="ageDisplay">40</span>
+            <div>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            </div>
+            <div class="buttonGap">
+                <span id="genderError"></span>
+            </div>
+            <button id="nextButton1">Next</button>
+        </div>
+        
+        <div class="page" id="page2">
+            <!-- Page 2: Cholesterol input -->
+            <h2>Cholesterol Input</h2>
+            <div>
+                <label for="totalCholesterol">Total Cholesterol</label>
+                <input type="range" id="totalCholesterol" min="100" max="300" value="200" class="slider">
+                <span id="totalCholesterolDisplay">200 mg/dL</span>
+            </div>
+            <div class="buttonGap">
+                <label for="HDLCholesterol">HDL Cholesterol</label>
+                <input type="range" id="HDLCholesterol" min="10" max="150" value="50" class="slider">
+                <span id="HDLCholesterolDisplay">50 mg/dL</span>
+            </div >
+            
+            <button id="prev">Back</button>
+            <button id="nextButton2">Next</button>
+        </div>
+        
+        <div class="page" id="page3">
+            <!-- Page 3: Smoking status input -->
+            <h2>Smoking Status Input</h2>
+            <div>
+                <label>Do you smoke cigarettes?:</label>
+                <input type="radio" name="cigarettes" value="yes"> Yes
+                <input type="radio" name="cigarettes" value="no"> No
+            </div>
+            <div class="buttonGap">
+                <span id="smokingError"></span>
+            </div>
+            <button id="prev">Back</button>
+            <button id="nextButton3">Next</button>
+        </div>
+        
+        <div class="page" id="page4">
+            <!-- Page 4: Blood pressure input -->
+            <h2>Blood Pressure Input</h2>
+            <div>
+                <label>Enter your systolic blood pressure:</label>
+                <input type="text" id="bloodPressureInput">
+                <span>mm Hg</span>
+            </div>
+            <div>
+                <label>Currently being treated for hypertension?</label>
+                <input type="checkbox" id="treatmentCheck" value="yes">
+            </div>
+            <div class="buttonGap">
+                <span id="error"></span>
+            </div>
+
+            <button id="prev">Back</button>
+            <button id="calculateButton">Calculate</button>
+        </div>
+        
+        <div class="page" id="page5">
+            <!-- Page 5: Results -->
+            <h1>Result</h1>
+
+            <div class="buttonGap">
+                <span id="result"></span>
+            </div>
+            
+            <button id="prev">Back</button>
+        </div>
+        <script src="script.js" defer></script>
+    </body>
+</html>
