@@ -1,16 +1,27 @@
-const pages = document.querySelectorAll('.page');
-const nextButtons = document.querySelectorAll('[id^=next]');
-const prevButtons = document.querySelectorAll('[id^=prev]')
+// Constant variables for accessing HTML components
+const pages = document.querySelectorAll('.page')
 const error = document.getElementById('error');
 const genderError = document.getElementById('genderError');
 const smokingError = document.getElementById('smokingError');
+
+const nextButton1 = document.getElementById('nextButton1');
+const nextButton2 = document.getElementById('nextButton2');
+const nextButton3 = document.getElementById('nextButton3');
+const calculateButton = document.getElementById('calculateButton');
+
+const prevButtons = document.querySelectorAll('[id^=prev]')
+
+
+// Variables to store user inputted data.
 var score = 0;
 var gender;
 var smoker;
 var bloodPressure;
 
+// Variable to store what page the user is currently on.
 let currentPage = 0;
 
+// Funtion to show the page that the user is currently on.
 function showPage(pageIndex) {
   pages.forEach((page, index) => {
     if (index === pageIndex) {
@@ -21,7 +32,8 @@ function showPage(pageIndex) {
   });
 }
 
-const nextButton1 = document.getElementById('nextButton1');
+// nextButton1 click event listener.
+// Ensures that a gender is selected before continuing.
 nextButton1.addEventListener('click', () => {
   if (gender == null) {
     genderError.innerHTML = "Please select a gender.";
@@ -34,7 +46,7 @@ nextButton1.addEventListener('click', () => {
   }
 });
 
-const nextButton2 = document.getElementById('nextButton2');
+// nextButton2 click event listener.
 nextButton2.addEventListener('click', () => {
   if (currentPage < pages.length - 1) {
     currentPage++;
@@ -42,7 +54,8 @@ nextButton2.addEventListener('click', () => {
   }
 });
 
-const nextButton3 = document.getElementById('nextButton3');
+// nextButton3 click event listener.
+// Ensures that a smoking option is selected before continuing.
 nextButton3.addEventListener('click', () => {
   if (smoker == null) {
     smokingError.innerHTML = "Please select a smoking option.";
@@ -55,18 +68,9 @@ nextButton3.addEventListener('click', () => {
   }
 });
 
-prevButtons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    if (currentPage > 0) {
-      currentPage--;
-      showPage(currentPage);
-    }
-  });
-});
-
-const calculateButton = document.getElementById('calculateButton');
+// calculateButton click event listener.
+// Calls calculateResult() method and displays result based on the gender selected.
 calculateButton.addEventListener('click', () => {
-  
   const bloodPressureInput = document.getElementById('bloodPressureInput');
   bloodPressure = bloodPressureInput.value;
   if (bloodPressure === "") {
@@ -80,81 +84,90 @@ calculateButton.addEventListener('click', () => {
       showPage(currentPage);
     }
 
+prevButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  });
+});
+    
     const resultOutput = document.getElementById('result');
     
     if (gender === 'male') {
       if (result <= 0) {
-        resultOutput.innerHTML = "< 1%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is < 1% ";
       } else if (result <= 4) {
-        resultOutput.innerHTML = "1%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 1%";
       } else if (result <= 6) {
-        resultOutput.innerHTML = "2%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 2%";
       } else if (result === 7) {
-        resultOutput.innerHTML = "3%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 3%";
       } else if (result === 8) {
-        resultOutput.innerHTML = "4%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 4%";
       } else if (result === 9) {
-        resultOutput.innerHTML = "5%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 5%";
       } else if (result === 10) {
-        resultOutput.innerHTML = "6%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 6%";
       } else if (result === 11) {
-        resultOutput.innerHTML = "8%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 8%";
       } else if (result === 12) {
-        resultOutput.innerHTML = "10%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 10%";
       } else if (result === 13) {
-        resultOutput.innerHTML = "13%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 13%";
       } else if (result === 14) {
-        resultOutput.innerHTML = "16%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 16%";
       } else if (result === 15) {
-        resultOutput.innerHTML = "20%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 20%";
       } else if (result === 16) {
-        resultOutput.innerHTML = "25%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 25%";
       } else {
-        resultOutput.innerHTML = "> 30%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is > 30%";
       }
     } else {
       if (result < 9) {
-        resultOutput.innerHTML = "< 1%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is < 1%";
       } else if (result <= 12) {
-        resultOutput.innerHTML = "1%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 1%";
       } else if (result <= 14) {
-        resultOutput.innerHTML = "2%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 2%";
       } else if (result === 15) {
-        resultOutput.innerHTML = "3%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 3%";
       } else if (result === 16) {
-        resultOutput.innerHTML = "4%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 4%";
       } else if (result === 17) {
-        resultOutput.innerHTML = "5%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 5%";
       } else if (result === 18) {
-        resultOutput.innerHTML = "6%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 6%";
       } else if (result === 19) {
-        resultOutput.innerHTML = "8%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 8%";
       } else if (result === 20) {
-        resultOutput.innerHTML = "11%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 11%";
       } else if (result === 21) {
-        resultOutput.innerHTML = "14%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 14%";
       } else if (result === 22) {
-        resultOutput.innerHTML = "17%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 17%";
       } else if (result === 23) {
-        resultOutput.innerHTML = "22%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 22%";
       } else if (result === 24) {
-        resultOutput.innerHTML = "27%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is 27%";
       } else {
-        resultOutput.innerHTML = "> 30%";
+        resultOutput.innerHTML = "Your 10-year cadiovascular risk is > 30%";
       }
     }
     score = 0;
   }
 });
 
-// Age Input Listener
+// Age input listener.
 const ageInput = document.getElementById('age');
 ageInput.addEventListener('input', () => {
     const ageDisplay = document.getElementById('ageDisplay');
     ageDisplay.textContent = ageInput.value;
 });
 
-// Gender Input Listener
+// Gender input listener.
 const genderInputs = document.querySelectorAll('input[name=gender]');
 genderInputs.forEach(input => {
   input.addEventListener('change', () => {
@@ -162,21 +175,21 @@ genderInputs.forEach(input => {
   });
 });
 
-// Total Cholesterol Input Listener
+// Total cholesterol listener.
 const totalCholesterolInput = document.getElementById('totalCholesterol');
 totalCholesterolInput.addEventListener('input', () => {
   const totalCholesterolDisplay = document.getElementById('totalCholesterolDisplay');
   totalCholesterolDisplay.textContent = totalCholesterolInput.value + " mg/dL";
 });
 
-// HDL Cholesterol Input Listener
+// HDL cholesterol input listener.
 const HDLCholesterolInput = document.getElementById('HDLCholesterol');
 HDLCholesterolInput.addEventListener('input', () => {
   const HDLCholesterolDisplay = document.getElementById('HDLCholesterolDisplay');
   HDLCholesterolDisplay.textContent = HDLCholesterolInput.value + " mg/dL";
 })
 
-// Smoker Input Listener
+// Smoker input listener.
 const smokerInputs = document.querySelectorAll('input[name=cigarettes]');
 smokerInputs.forEach(input => {
   input.addEventListener('change', () => {
@@ -186,6 +199,7 @@ smokerInputs.forEach(input => {
 
 showPage(currentPage);  // Show the initial page
 
+// Function that calculates the Framingham Risk Score from the inputted data.
 function calculateResult() {
   if (gender === "male") {
     if (ageInput.value <= 34) {
