@@ -80,9 +80,6 @@ calculateButton.addEventListener('click', () => {
       showPage(currentPage);
     }
 
-    // const resultOutput = document.getElementById('result');
-    // resultOutput.innerHTML = result;
-    
     const resultOutput = document.getElementById('result');
     
     if (gender === 'male') {
